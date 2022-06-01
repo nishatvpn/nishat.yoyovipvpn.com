@@ -349,7 +349,7 @@ service dropbear restart
 
 # OpenVPN Login
 cd ~
-wget -O /etc/openvpn/login.sh "https://raw.githubusercontent.com/nishatvpn/allinone/main/login.sh"
+wget -O /etc/openvpn/login.sh "https://raw.githubusercontent.com/nishatvpn/nishat.yoyovipvpn.com/main/login.sh"
 sed -i 's/\r$//' /etc/openvpn/login.sh
 echo \> Done!
 sleep 1
@@ -366,11 +366,11 @@ chmod 755 /etc/openvpn/login.sh
 
 ## Download & Setup SOCKS Proxy
 apt-get install screen -y
-wget -O /root/socksDirect.py "https://raw.githubusercontent.com/nishatvpn/allinone/main/socksDirect.py"
+wget -O /root/socksDirect.py "https://raw.githubusercontent.com/nishatvpn/nishat.yoyovipvpn.com/main/socksDirect.py"
 chmod +x /root/socksDirect.py
 screen -d -m python socksDirect.py
 
-wget -O /root/socksDirect2.py "https://raw.githubusercontent.com/nishatvpn/allinone/main/socksDirect2.py"
+wget -O /root/socksDirect2.py "https://raw.githubusercontent.com/nishatvpn/nishat.yoyovipvpn.com/main/socksDirect2.py"
 chmod +x /root/socksDirect2.py
 screen -d -m python socksDirect2.py
 
@@ -560,7 +560,7 @@ $mysqli->close();
 SSHPanel1
 
 cd ~
-wget -O /root/update.sh "https://raw.githubusercontent.com/nishatvpn/allinone/main/update.sh"
+wget -O /root/update.sh "https://raw.githubusercontent.com/nishatvpn/nishat.yoyovipvpn.com/main/update.sh"
 sed -i 's/\r$//' /root/update.sh
 dos2unix /root/update.sh
 chmod +x /root/update.sh
@@ -590,27 +590,27 @@ crontab -l | { cat; echo "* * * * * sudo pkill dropbear && sudo /etc/init.d/drop
 crontab -l | { cat; echo "0 0 * * * sleep 5 && reboot"; } | crontab -
 
 # Disabled SSH Multiple Login
-wget -O /home/multilogin "https://raw.githubusercontent.com/nishatvpn/allinone/main/multilogin"
+wget -O /home/multilogin "https://raw.githubusercontent.com/nishatvpn/nishat.yoyovipvpn.com/main/multilogin"
 chmod 755 /home/multilogin
 echo -e "* \t * *\troot bash /home/multilogin 1" >> "/etc/cron.d/multilogin"
 
-cat <<'Startupnishat' > /etc/profile.d/nishat.sh
+cat <<'Startupnishatsoft' > /etc/profile.d/nishat.sh
 clear
-echo -e "\n NISHAT Server Script"
+echo -e "\n NISHATSOFT Server Script"
 echo -e " UBUNTU16 | OPENVPN / SSH / SSL / SOCKS"
 echo -e " Server ISP: $(curl -4s http://ipinfo.io/org)"
 echo -e " Server IP Address: $(curl -4s http://ipinfo.io/ip)"
 echo -e " Server Location: $(curl -4s http://ipinfo.io/country)"
 echo -e " For commands and assistance, ask FirenetDev - [DEVELOPER] for more details.\n"
-echo -e " Powered by NISHAT | COPYRIGHT 2022\n"
-Startupnishat
-chmod a+x /etc/profile.d/nishat.sh
+echo -e " Powered by NISHATSOFT | COPYRIGHT 2022\n"
+Startupnishatsoft
+chmod a+x /etc/profile.d/nishatsoft.sh
 clear
 
 # install stunnel4 From Premium Script
 apt-get install stunnel4 -y
-wget -O /etc/stunnel/stunnel.pem "https://raw.githubusercontent.com/nishatvpn/allinone/main/stunnel.pem"
-wget -O /etc/stunnel/stunnel.conf "https://raw.githubusercontent.com/nishatvpn/allinone/main/stunnel.conf"
+wget -O /etc/stunnel/stunnel.pem "https://raw.githubusercontent.com/nishatvpn/nishat.yoyovipvpn.com/main/stunnel.pem"
+wget -O /etc/stunnel/stunnel.conf "https://raw.githubusercontent.com/nishatvpn/nishat.yoyovipvpn.com/main/stunnel.conf"
 sed -i "$MYIP2" /etc/stunnel/stunnel.conf
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 service stunnel4 restart
@@ -618,7 +618,7 @@ service stunnel4 restart
 # install ddos deflate
 cd
 apt-get install dnsutils dsniff -y
-wget -O /root/ddos-deflate-master.zip "https://github.com/nishatvpn/allinone/blob/main/ddos-deflate-master.zip?raw=true"
+wget -O /root/ddos-deflate-master.zip "https://github.com/nishatvpn/nishat.yoyovipvpn.com/blob/main/ddos-deflate-master.zip?raw=true"
 unzip ddos-deflate-master.zip
 cd ddos-deflate-master
 bash ./install.sh
@@ -703,15 +703,15 @@ b {
 <div>SSH Protection : <b><font color='red'>Enable</font></b></div>
 <div>Anti MultiLogin SSH : <b><font color='red'>Enable</font></b></div>
 <hr>
-<div>Developed by <b>Nishat</b> | Bograwebhost</div>
+<div>Developed by <b>NishatSoft</b> | BograWebHost.com</div>
 
 </body>
 </html>" >> /var/www/html/index.html
 
 touch /var/www/html/client-tcp.ovpn
 echo "
-#### NISHAT SCRIPT INSTALLER ####
-## Created by : Bograwebhost ##
+#### NISHATSOFT SCRIPT INSTALLER ####
+## Created by : BograWebHost.com ##
 ###############################
 
 client
@@ -765,8 +765,8 @@ Iea/UsVA
 
 touch /var/www/html/client-udp.ovpn
 echo "
-#### NISHAT SCRIPT INSTALLER ####
-## Created by : Bograwebhost ##
+#### NISHATSOFT SCRIPT INSTALLER ####
+## Created by : BograWebHost.com ##
 ###############################
 
 client
@@ -832,7 +832,7 @@ sudo apt update
 sudo apt install squid3=3.3.8-1ubuntu6 squid=3.3.8-1ubuntu6 squid3-common=3.3.8-1ubuntu6 -y
 
 #Install missing init.d script
-curl -O https://raw.githubusercontent.com/nishatvpn/allinone/main/squid3
+curl -O https://raw.githubusercontent.com/nishatvpn/nishat.yoyovipvpn.com/main/squid3
 sudo cp squid3 /etc/init.d/
 sudo chmod +x /etc/init.d/squid3
 sudo update-rc.d squid3 defaults
